@@ -95,6 +95,6 @@ This project demonstrates how marker-based AR can be extended beyond simple visu
 ---
 
 ## Author
-- Suhani Garg , Akarsh Dhingra , Shristi
+- Suhani Garg , Akarsh Dhingra , Srishti Garg
 - UEC - 512
 - Interactive Marker-Based AR Menu Browsing System
