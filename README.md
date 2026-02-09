@@ -96,10 +96,14 @@ This project demonstrates how marker-based AR can be extended beyond simple visu
 ## Blogs 
 [Akarsh Dhingra 
 ](https://medium.com/ar-vr)
+
 [Suhani Garg
 ](https://medium.com/@sgarg4_be23/part-1-reflection-on-the-initial-presentation-and-identifying-gaps-4d08c6e4d370)
+
 [Srishti Garg
-](https://medium.com/@gautsrishti123/purpose-controlled-scope-and-evaluation-perspective-7356830fe105)## Author
+](https://medium.com/@gautsrishti123/purpose-controlled-scope-and-evaluation-perspective-7356830fe105)
+
+## Author
 - Suhani Garg , Akarsh Dhingra , Srishti Garg
 - UEC - 512
 - Interactive Marker-Based AR Menu Browsing System
