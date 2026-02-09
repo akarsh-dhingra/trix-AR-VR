@@ -93,8 +93,13 @@ The project focuses on improving decision-making at the point of ordering rather
 This project demonstrates how marker-based AR can be extended beyond simple visualization by incorporating interaction, navigation, and contextual information. The system provides a practical and user-friendly example of AR usage suitable for beginner-level implementation while addressing a real-world problem.
 
 ---
-
-## Author
+## Blogs 
+[Akarsh Dhingra 
+](https://medium.com/ar-vr)
+[Suhani Garg
+](https://medium.com/@sgarg4_be23/part-1-reflection-on-the-initial-presentation-and-identifying-gaps-4d08c6e4d370)
+[Srishti Garg
+](https://medium.com/@gautsrishti123/purpose-controlled-scope-and-evaluation-perspective-7356830fe105)## Author
 - Suhani Garg , Akarsh Dhingra , Srishti Garg
 - UEC - 512
 - Interactive Marker-Based AR Menu Browsing System
