@@ -1,3 +1,6 @@
 title: trix-AR-VR Blog
 description: AR-VR Project Blog Collection
 theme: minima
+
+baseurl: "/trix-AR-VR"
+url: "https://akarsh-dhingra.github.io"
