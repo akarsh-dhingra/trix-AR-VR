@@ -12,7 +12,6 @@ Welcome to our group documentation site.
 - [Suhani](Blogs/Suhani/)
 - [Akarsh](Blogs/Akarsh/)
 - [Srishti](Blogs/Srishti/)
-
 # Interactive Marker-Based AR Menu Browsing System
 
 ## Project Overview
