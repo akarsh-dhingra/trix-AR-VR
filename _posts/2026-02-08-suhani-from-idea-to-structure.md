@@ -8,7 +8,9 @@ categories: [Suhani]
 ## Background Context
 
 When we first proposed building an augmented reality–based menu system, the idea felt exciting and practical. The core concept was simple: scan a menu, display a 3D pizza in AR, and enhance the ordering experience. It seemed modern, interactive, and relevant to real-world use.
+
 ![AR Food Menu]({{ "/assets/images/AR-food-menu.jpg" | relative_url }})
+
 However, during our initial presentation, we realized that having a good idea is not the same as having a well-defined system. While the motivation behind the project was understood, several important structural questions were raised. These questions helped us recognize that we had explained *what* we wanted to build, but not clearly enough *how* it would function.
 
 ---
@@ -19,8 +21,10 @@ During the discussion, one of the main concerns was about marker usage.
 
 It was unclear whether:
 - A single marker would represent the entire menu, or  
-- Multiple markers would be used for different items  
+- Multiple markers would be used for different items
+  
 ![AR Food Menu]({{ "/assets/images/download.jpg" | relative_url }})
+
 This created ambiguity about how the system would scale and function in practice.
 
 Another important question was:
