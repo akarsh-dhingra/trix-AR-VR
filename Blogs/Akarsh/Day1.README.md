@@ -1,4 +1,4 @@
-{% assign akarsh_posts = site.posts | where_exp: "post", "post.categories contains 'Suhani'" | sort: "date" | reverse %}
+{% assign akarsh_posts = site.posts | where_exp: "post", "post.categories contains 'Akarsh'" | sort: "date" | reverse %}
 
 {% for post in akarsh_posts %}
 
