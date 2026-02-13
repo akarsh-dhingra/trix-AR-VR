@@ -12,6 +12,10 @@ While planning the frontend development of our AR-based menu system, we encounte
 
 Although our system is designed using AR Foundation — which is inherently cross-platform — practical deployment is influenced by the development environment and hardware availability.
 
+<p align="center">
+  <img src="{{ "/assets/images/arvrsetup" | relative_url }}" width="500">
+</p>
+
 ---
 
 ## Why iOS Deployment Was Not Feasible
