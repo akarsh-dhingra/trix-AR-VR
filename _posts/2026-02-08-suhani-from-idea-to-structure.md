@@ -25,11 +25,6 @@ It was unclear whether:
 - A single marker would represent the entire menu, or  
 - Multiple markers would be used for different items
 
-<p align="center">
-  <img src="{{ "/assets/images/download.jpg" | relative_url }}" width="500">
-</p>
-
-
 This created ambiguity about how the system would scale and function in practice.
 
 Another important question was:
@@ -45,6 +40,10 @@ These questions revealed that our explanation lacked system-level clarity.
 ---
 
 ## Realizations from the Feedback
+
+<p align="center">
+  <img src="{{ "/assets/images/download.jpg" | relative_url }}" width="500">
+</p>
 
 The biggest realization from Day 1 was that a project must be explained as a **complete interaction flow**, not just a list of features.
 
