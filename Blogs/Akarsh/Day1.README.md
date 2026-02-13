@@ -1,6 +1,6 @@
-{% assign suhani_posts = site.posts | where_exp: "post", "post.categories contains 'Suhani'" | sort: "date" | reverse %}
+{% assign akarsh_posts = site.posts | where_exp: "post", "post.categories contains 'Suhani'" | sort: "date" | reverse %}
 
-{% for post in suhani_posts %}
+{% for post in akarsh_posts %}
 
 [{{ post.title }}]({{ post.url | relative_url }})
 {{ post.date | date: "%B %d, %Y" }}
