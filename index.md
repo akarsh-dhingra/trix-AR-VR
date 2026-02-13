@@ -21,7 +21,7 @@ The project focuses on improving decision-making at the point of ordering rather
 ---
 
 ## Type of Augmented Reality
-- **Marker-based AR**
+## **Marker-based AR**
 - A predefined menu image/QR code is used as the marker.
 - AR content appears only when the marker is detected.
 
