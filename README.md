@@ -1,5 +1,9 @@
 # Interactive Marker-Based AR Menu Browsing System
 
+## 🌐 Live Website
+Project Website:  
+https://akarsh-dhingra.github.io/trix-AR-VR/
+
 ## Project Overview
 This project is a marker-based augmented reality (AR) application designed to enhance the traditional food menu experience. By scanning a printed menu containing a QR code or image marker, users can view interactive 3D representations of pizza items directly on the menu. The system allows users to browse multiple pizza variations, explore ingredient details, and view nutritional information, helping them make more informed food choices.
 
