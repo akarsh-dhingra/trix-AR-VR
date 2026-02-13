@@ -1,7 +1,6 @@
 title: trix-AR-VR Blog
 description: AR-VR Project Blog Collection
-remote_theme: mmistakes/minimal-mistakes
+remote_theme: just-the-docs/just-the-docs
 plugins:
   - jekyll-remote-theme
-
 
