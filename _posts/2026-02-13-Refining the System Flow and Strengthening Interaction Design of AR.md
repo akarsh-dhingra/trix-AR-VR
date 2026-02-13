@@ -1,1 +1,160 @@
+---
+layout: post
+title: "Refining the System Flow and Strengthening Interaction Design of AR/VR Interactive Marker-Based AR Menu Browsing System
+"
+date: 2026-02-13
+categories: [Akarsh]
+---
+
+## Project Overview
+
+The **AR/VR Interactive Marker-Based AR Menu Browsing System** is an augmented reality application designed to explore how physical restaurant menus can be enhanced through immersive, interactive digital content.  
+
+The project investigates the use of **marker-based AR** as a practical, accessible, and low-cost approach for visualizing food items in three dimensions while maintaining a clear link between the physical and digital environments.
+
+The primary objective of the system is to move beyond static images traditionally used in menus and instead offer users an interactive, spatially anchored browsing experience.
+
+By scanning a physical marker — such as a printed menu card or QR-style image — users gain access to a virtual menu where food items can be explored visually, contextually, and interactively.
+
+The project emphasizes:
+
+- Usability  
+- System stability  
+- Meaningful interaction  
+
+This makes it suitable for real-world deployment as well as academic demonstration.
+
+---
+
+## System Motivation and Design Philosophy
+
+Early iterations of the project revealed a common limitation in basic AR applications:
+
+- Frequent re-scanning  
+- Fragmented scenes  
+- Interactions focused more on novelty than usability  
+
+Based on evaluative feedback, the system was refined to adopt a more structured and intentional interaction model.
+
+The revised design prioritizes three core principles:
+
+### 1️⃣ Scene Persistence  
+Once activated, the AR environment should remain stable and continuous.
+
+### 2️⃣ Minimal Physical Effort  
+Users should not be required to repeatedly scan markers.
+
+### 3️⃣ Meaningful Interaction  
+Every interaction should serve a functional or informational purpose.
+
+These principles directly informed the architectural decisions made in the refined system.
+
+---
+
+## Marker-Based Architecture and Scene Initialization
+
+At the foundation of the system lies a **single-marker architecture**.
+
+Instead of assigning individual markers to each menu item, the application intentionally uses **one physical marker** to represent the entire menu.  
+
+This marker acts as a stable spatial anchor, defining the coordinate system in which all virtual content is rendered.
+
+When the marker is detected by the device camera:
+
+- The application initializes a single AR scene  
+- The scene loads once  
+- The interaction session continues without reinitialization  
+
+This design:
+
+- Minimizes tracking loss  
+- Reduces user friction  
+- Preserves immersion  
+
+Upon successful detection, a default **3D pizza model** is rendered and anchored directly to the marker, establishing a clear connection between the physical menu and its digital counterpart.
+
+---
+
+## Persistent Scene Navigation and Model Management
+
+A defining feature of the refined system is its **persistent AR scene**.
+
+After the initial scan:
+
+- The user does not need to interact with the marker again  
+- Navigation is handled entirely through on-screen UI controls  
+
+Pizza variations are explored using **left and right arrow buttons**.
+
+Each button press dynamically replaces the currently displayed pizza model with another variant.
+
+Importantly:
+
+- Position remains constant  
+- Orientation remains constant  
+- Scale remains constant  
+
+Only the model changes.
+
+This ensures:
+
+- Spatial consistency  
+- No disorientation  
+- Effective runtime asset swapping  
+- Proper AR state management  
+
+This demonstrates how interactive AR systems can dynamically update content without resetting spatial anchors.
+
+---
+
+## Ingredient-Level Interaction and Information Discovery
+
+To extend the experience beyond simple visualization, the system incorporates **ingredient-level interaction**.
+
+Individual toppings on the pizza model are clickable interactive elements.
+
+When selected:
+
+- The topping name appears  
+- A brief descriptive overlay is displayed  
+
+This transforms the AR menu into an exploratory interface and demonstrates object-level interaction within a marker-based AR scene.
+
+---
+
+## Nutritional Information and UI Integration
+
+The system also includes a **nutrition toggle feature**.
+
+Users can display or hide:
+
+- Calorie values  
+- Dietary classification (e.g., vegetarian / non-vegetarian)  
+
+This information is accessed through a dedicated UI button.
+
+The toggle-based design ensures:
+
+- The AR scene remains visually clean  
+- Information is available on demand  
+- Users control their level of detail  
+
+This reflects strong UI design principles within immersive environments.
+
+---
+
+## Project Outcome and Technical Significance
+
+Through its refinements, the project evolves from a basic AR visualization into a structured interactive system.
+
+The final implementation demonstrates:
+
+- A strong understanding of marker-based AR principles  
+- Effective UI and AR scene integration  
+- Practical state and content management  
+- A user-centered immersive interaction model  
+
+The **Interactive Marker-Based AR Menu Browsing System** showcases how augmented reality can be applied in a practical, intuitive, and technically sound manner.
+
+Rather than functioning as a visual gimmick, the system presents AR as a meaningful interface capable of enhancing everyday experiences such as menu browsing through thoughtful interaction design.
 
