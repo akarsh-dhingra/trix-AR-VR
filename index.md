@@ -3,8 +3,6 @@ layout: page
 title: AR-VR Project Blog Collection
 ---
 
-# AR-VR Project Blog Collection
-
 Welcome to our group documentation site.
 
 ## Authors
