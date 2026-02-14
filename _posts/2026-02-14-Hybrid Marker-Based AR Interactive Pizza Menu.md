@@ -7,305 +7,329 @@ categories: [Akarsh]
 ---
 
 
-The project is a Hybrid Augmented Reality (AR) system, with it's input module as follows that combines:
+# 🍕 Hybrid Augmented Reality (AR) Pizza Visualization System
 
-QR Code-based Data Retrieval
+## 📌 Project Overview
 
-SLAM-based Surface Detection
+This project presents a **Hybrid Augmented Reality (AR) system** that combines:
 
-3D Object Placement on Real-world Tables
+- **QR Code-based Data Retrieval**
+- **SLAM-based Surface Detection**
+- **3D Object Placement on Real-world Tables**
+
+Unlike traditional marker-based AR systems, this architecture separates:
+
+- **QR Code → Data Trigger**
+- **SLAM → Real-world Surface Placement**
+
+This enables a more immersive and technically advanced AR experience.
+
+---
+
+# 🎯 System Capabilities
 
 The system allows users to:
 
-Scan a QR code on a restaurant menu.
+1. Scan a QR code on a restaurant menu.
+2. Load the complete pizza menu dynamically.
+3. Select a specific pizza.
+4. View a 3D pizza model rendered on the real table in front of them.
 
-Load the complete pizza menu dynamically.
+---
 
-Select a specific pizza.
+# 🧠 Architecture Overview
 
-View a 3D pizza model rendered on the table in front of them.
+## 🔹 Hybrid Model
 
-Unlike traditional marker-based AR where the object appears on the marker itself, this system uses:
+| Component | Responsibility |
+|-----------|---------------|
+| QR Code | Data Retrieval |
+| SLAM | Surface Detection |
+| User Selection | 3D Rendering |
 
-QR code → Data trigger
+> ⚠️ The pizza does **NOT** appear on the QR marker.  
+> The QR only triggers data loading.
 
-SLAM → Real-world surface placement
+---
 
-🧠 Marker Detection & Tracking Module (QR-Based)
-1️⃣ Camera Frame Acquisition
+# 📷 Marker Detection & Tracking Module (QR-Based)
+
+## 1️⃣ Camera Frame Acquisition
 
 The mobile camera continuously captures frames (30–60 FPS).
 
-Each frame undergoes:
+Each frame undergoes preprocessing:
 
-Grayscale conversion
+- Grayscale conversion  
+- Edge detection  
+- Corner detection  
 
-Edge detection
+These steps prepare the frame for feature extraction.
 
-Corner detection
+---
 
-These preprocessing steps prepare the image for feature extraction.
+## 2️⃣ Feature Point Extraction
 
-2️⃣ Feature Point Extraction
+AR SDKs such as:
 
-AR SDKs (ARCore, ARKit, Vuforia, AR Foundation) detect distinct visual features from the QR image.
+- ARCore  
+- ARKit  
+- Vuforia  
+- AR Foundation  
 
-Common algorithms used internally:
+detect distinct visual features from the QR image.
 
-ORB (Oriented FAST and Rotated BRIEF)
+### Algorithms Used Internally
 
-FAST Corner Detection
-
-SIFT / SURF (older methods)
+- ORB (Oriented FAST and Rotated BRIEF)
+- FAST Corner Detection
+- SIFT / SURF (legacy methods)
 
 These algorithms:
 
-Detect corners
+- Detect corners  
+- Identify edges  
+- Extract unique pixel patterns  
 
-Identify edges
+QR codes are ideal due to:
 
-Extract unique pixel patterns
+- High black-white contrast  
+- Strong geometric structure  
 
-Since QR codes have strong black-white contrast and geometric corners, they are ideal for fast detection.
+Each detected feature becomes a **2D coordinate in image space**.
 
-Each detected feature becomes a 2D coordinate in image space.
+---
 
-3️⃣ Feature Matching
+## 3️⃣ Feature Matching
 
-The AR system stores a reference image of the QR marker.
+The system stores a reference image of the QR marker.
 
 During runtime:
 
-Live camera frame features
-are compared with
+- Live camera features  
+  are matched with  
+- Stored QR reference features  
 
-Stored QR reference features
+Using descriptor matching.
 
-Using descriptor matching:
+If sufficient matches are found → **Marker detected successfully.**
 
-Corresponding feature points are matched.
+---
 
-If enough matches are found → Marker detected successfully.
+## 4️⃣ Pose Estimation
 
-4️⃣ Pose Estimation
+Once detected, the system computes:
 
-Once the QR is detected, the system calculates:
-
-Rotation (R)
-
-Translation (T)
+- **Rotation (R)**
+- **Translation (T)**
 
 Using:
 
-Perspective-n-Point (PnP) algorithm
-
-Homography matrix
+- Perspective-n-Point (PnP)
+- Homography Matrix
 
 This determines:
 
-Position of the QR in 3D space
+- Position of QR in 3D space
+- Orientation relative to camera
 
-Orientation relative to the camera
+A transformation matrix is generated, creating a virtual coordinate system.
 
-A transformation matrix is computed, creating a virtual coordinate system anchored to the QR.
+---
 
-This enables accurate 3D rendering.
+# 🧠 Surface Detection Using SLAM
 
-🧠 Hybrid Architecture: QR for Data + SLAM for Placement
-Concept
+## What is SLAM?
 
-QR Code → Data Retrieval
-SLAM → Surface Detection
-User Selection → 3D Rendering on Table
-
-The pizza does NOT appear on the QR marker.
-
-Instead:
-
-QR triggers menu loading.
-
-SLAM detects the real-world table.
-
-The selected pizza is rendered on the table.
-
-🧠 Surface Detection Using SLAM
-
-SLAM = Simultaneous Localization and Mapping
+**SLAM = Simultaneous Localization and Mapping**
 
 It performs two tasks simultaneously:
 
-Maps the surrounding environment.
+1. Maps the environment.
+2. Tracks device movement in 3D space.
 
-Tracks the phone's movement in space.
+---
 
-Step 1️⃣ Feature Tracking in Environment
+## Step 1️⃣ Environmental Feature Tracking
 
 The camera detects natural feature points such as:
 
-Table edges
+- Table edges
+- Wood patterns
+- Corners
+- Texture variations
 
-Wood patterns
+These are environmental features — different from QR features.
 
-Corners
+---
 
-Texture variations
-
-These are different from QR feature points — they are environmental.
-
-Step 2️⃣ Motion Tracking
+## Step 2️⃣ Motion Tracking
 
 The system combines:
 
-Camera data
+- Camera input
+- Gyroscope
+- Accelerometer
 
-Gyroscope
+To determine device movement in 3D space.
 
-Accelerometer
+---
 
-To determine how the phone moves in 3D space.
+## Step 3️⃣ Point Cloud Creation
 
-Step 3️⃣ Point Cloud Creation
+Tracked feature points are converted into a **sparse 3D map**.
 
-Tracked feature points are converted into a sparse 3D map.
+This forms a point cloud representation of the environment.
 
-This creates a point cloud representation of the environment.
+---
 
-Step 4️⃣ Plane Detection
+## Step 4️⃣ Plane Detection
 
-Using algorithms like RANSAC:
+Using algorithms like **RANSAC**:
 
-The system clusters coplanar points.
+- Coplanar points are clustered.
+- A flat surface model is fitted.
 
-Fits a flat surface model.
-
-If enough horizontal points exist → A plane is detected.
+If sufficient horizontal points exist → A plane is detected.
 
 Examples:
+- Table surface
+- Floor
 
-Table surface
+---
 
-Floor
+# 🔄 Complete System Flow
 
-🧠 System Flow (Step-by-Step)
-🔹 Step 1 — QR Scan
+## 🔹 Step 1 — QR Scan
 
-Camera detects QR code.
+- Camera detects QR code.
+- QR is decoded.
+- JSON menu data is retrieved.
+- Pizza list loads in UI.
+- No 3D object rendered yet.
 
-QR is decoded.
+---
 
-JSON menu data is retrieved.
+## 🔹 Step 2 — SLAM Activation
 
-Pizza list is loaded into UI.
+- User moves phone.
+- System detects table surface.
+- Plane visualization appears.
 
-(No 3D object rendered yet.)
+---
 
-🔹 Step 2 — SLAM Activation
-
-User moves phone around.
-
-System detects table surface.
-
-Plane visualization appears.
-
-🔹 Step 3 — Pizza Selection
+## 🔹 Step 3 — Pizza Selection
 
 When user selects a pizza:
 
-Corresponding 3D prefab is instantiated.
+- Corresponding 3D prefab is instantiated.
+- System performs a hit test.
+- Object is anchored to detected plane.
+- Pizza appears on the table.
 
-System performs a hit test.
+---
 
-Object is anchored to detected plane.
-
-Pizza appears on table.
-
-🧠 Hit Testing & Object Placement (Mathematical Insight)
+# 🎯 Hit Testing & Object Placement (Mathematical Insight)
 
 When placing the pizza:
 
-User taps screen at coordinates (x, y)
+1. User taps screen at coordinates (x, y).
+2. System casts a ray from camera into 3D world.
+3. Ray intersects detected plane.
+4. Intersection point is returned.
+5. 3D object placed at that coordinate.
 
-System casts a ray from camera into 3D world
+---
 
-Ray intersects detected plane
-
-Intersection point is returned
-
-3D object placed at that coordinate
-
-Ray equation:
+## 📐 Ray Equation
 
 P = O + tD
 
 Where:
 
-O = camera origin
+- O = Camera origin  
+- D = Direction vector  
+- t = Scalar  
 
-D = direction vector
+---
 
-t = scalar
-
-Plane equation:
+## 📐 Plane Equation
 
 Ax + By + Cz + D = 0
 
-Solving intersection gives precise world position for placement.
 
-🧠 Architectural Options
-Option A — Pure Marker-Based
+Solving the ray-plane intersection provides the precise world coordinate.
 
-Pizza appears directly on QR.
+---
 
-Simpler implementation.
+# 🏗 Architectural Options
 
-Lower computational load.
+## Option A — Pure Marker-Based
 
-Option B — Hybrid (Recommended)
+- Pizza appears directly on QR.
+- Simpler implementation.
+- Lower computational load.
 
-QR = Data trigger only.
+---
 
-SLAM = Real-world placement.
+## Option B — Hybrid (Recommended)
 
-Pizza appears on table.
+- QR = Data trigger only.
+- SLAM = Real-world placement.
+- Pizza appears on table.
 
-Advantages:
+### Advantages
 
-More immersive
+- More immersive
+- Technically advanced
+- Stronger academic value
+- Better user experience
 
-More technically advanced
+---
 
-Stronger academic value
-
-Better user experience
-
-⚠️ Important Engineering Note
+# ⚠️ Important Engineering Note
 
 If the pizza is placed relative to the table:
 
-The QR marker does NOT control the object’s position.
+- The QR marker does NOT control object position.
+- It only:
+  - Triggers data loading
+  - Starts AR session
 
-It only:
+Object placement depends entirely on:
 
-Triggers data loading
+- SLAM
+- Plane detection
+- Hit testing
 
-Starts AR session
+---
 
-Object placement depends entirely on SLAM and plane detection.
+# 🧩 Technical Components Used
 
-🚀 Technical Components Used
+- Computer Vision
+- Feature Detection Algorithms
+- Pose Estimation
+- SLAM
+- Plane Detection
+- Ray Casting
+- 3D Rendering Engine
 
-Computer Vision
+---
 
-Feature Detection Algorithms
+# 🚀 Conclusion
 
-Pose Estimation
+This Hybrid AR architecture separates:
 
-SLAM (Simultaneous Localization and Mapping)
+**Data Retrieval (QR)**  
+from  
+**Spatial Placement (SLAM)**  
 
-Plane Detection
+This creates a scalable, immersive, and academically robust AR system suitable for:
 
-Raycasting & Hit Testing
+- Restaurant visualization systems
+- Interactive AR commerce
+- Educational AR applications
+- Advanced HCI research projects
 
-3D Rendering
+---
 
-Mobile Sensor Fusion
