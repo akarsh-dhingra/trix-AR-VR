@@ -786,6 +786,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="📌 Project Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🖼 System Preview
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -797,16 +814,22 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#system-demonstration" class="md-nav__link">
+    <nav class="md-nav" aria-label="🎯 Motivation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#traditional-menu-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📱 System Demonstration
+        🖼 Traditional Menu Problem
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -827,6 +850,17 @@
     <span class="md-ellipsis">
       
         🔹 Marker-Based AR Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🖼 Architecture Diagram
       
     </span>
   </a>
@@ -894,6 +928,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ar-flow-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🖼 AR Flow Diagram
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -949,6 +994,17 @@
     <span class="md-ellipsis">
       
         ➤ Nutrition Toggle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-interaction-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🖼 Feature Interaction Interface
       
     </span>
   </a>
@@ -1055,10 +1111,6 @@
 <hr />
 <h2 id="project-overview">📌 Project Overview<a class="headerlink" href="#project-overview" title="Permanent link">&para;</a></h2>
 <p>The Interactive Marker-Based AR Pizza Menu System is an augmented reality application designed to enhance traditional restaurant menus using immersive 3D visualization.</p>
-<p align="center">
-  <img src="images-srishti/image1.png" width="600">
-</p>
-
 <p>Instead of relying on text descriptions and small images, this system allows users to:</p>
 <ul>
 <li>Scan a printed menu  </li>
@@ -1069,10 +1121,12 @@
 </ul>
 <p>The goal is simple:<br />
 Move from reading about food to experiencing food visually before ordering.</p>
+<h3 id="system-preview">🖼 System Preview<a class="headerlink" href="#system-preview" title="Permanent link">&para;</a></h3>
+<p><img alt="AR Pizza Preview" src="../images-srishti/image1.png" /></p>
 <hr />
 <h2 id="motivation">🎯 Motivation<a class="headerlink" href="#motivation" title="Permanent link">&para;</a></h2>
 <p>Imagine walking into a café you’ve never visited before.</p>
-<p>You look at the menu and see names like:
+<p>You look at the menu and see names like:<br />
 Italian Supreme, BBQ Chicken, Veg Delight.</p>
 <p>But you still don’t know:</p>
 <ul>
@@ -1086,19 +1140,8 @@ You ask again.<br />
 They gesture with their hands.</p>
 <p>This repeated back-and-forth slows ordering and still doesn’t provide a clear visual understanding.</p>
 <p>Our AR system eliminates this confusion.</p>
-<hr />
-<h2 id="system-demonstration">📱 System Demonstration<a class="headerlink" href="#system-demonstration" title="Permanent link">&para;</a></h2>
-<p>With a single scan:</p>
-<ul>
-<li>A 3D pizza appears on the table  </li>
-<li>Users switch between pizza varieties using arrows  </li>
-<li>Portion size scales visually (Small / Medium / Large)  </li>
-<li>Toppings are tappable  </li>
-<li>Nutrition details can be toggled  </li>
-</ul>
-<p>No repeated scanning.<br />
-No guessing.<br />
-No unnecessary questions.</p>
+<h3 id="traditional-menu-problem">🖼 Traditional Menu Problem<a class="headerlink" href="#traditional-menu-problem" title="Permanent link">&para;</a></h3>
+<p><img alt="Confused Customer" src="../images-srishti/image2.png" /></p>
 <hr />
 <h2 id="system-architecture">🏗 System Architecture<a class="headerlink" href="#system-architecture" title="Permanent link">&para;</a></h2>
 <h3 id="marker-based-ar-model">🔹 Marker-Based AR Model<a class="headerlink" href="#marker-based-ar-model" title="Permanent link">&para;</a></h3>
@@ -1130,6 +1173,8 @@ No unnecessary questions.</p>
 </tbody>
 </table>
 <p>The pizza model is anchored directly to the detected marker, creating a stable AR environment.</p>
+<h3 id="architecture-diagram">🖼 Architecture Diagram<a class="headerlink" href="#architecture-diagram" title="Permanent link">&para;</a></h3>
+<p><img alt="System Architecture" src="../images-srishti/image3.png" /></p>
 <hr />
 <h2 id="system-flow">🔄 System Flow<a class="headerlink" href="#system-flow" title="Permanent link">&para;</a></h2>
 <h3 id="step-1-marker-detection">Step 1 — Marker Detection<a class="headerlink" href="#step-1-marker-detection" title="Permanent link">&para;</a></h3>
@@ -1139,13 +1184,13 @@ No unnecessary questions.</p>
 <h3 id="step-3-3d-pizza-rendering">Step 3 — 3D Pizza Rendering<a class="headerlink" href="#step-3-3d-pizza-rendering" title="Permanent link">&para;</a></h3>
 <p>A default pizza model appears.</p>
 <h3 id="step-4-interaction">Step 4 — Interaction<a class="headerlink" href="#step-4-interaction" title="Permanent link">&para;</a></h3>
-<p>Users can:</p>
-<ul>
-<li>Navigate between pizzas  </li>
-<li>Change portion size  </li>
-<li>Tap toppings to view ingredient details  </li>
-<li>Toggle nutrition information (calories &amp; food category)</li>
-</ul>
+<p>Users can:
+- Navigate between pizzas<br />
+- Change portion size<br />
+- Tap toppings to view ingredient details<br />
+- Toggle nutrition information  </p>
+<h3 id="ar-flow-diagram">🖼 AR Flow Diagram<a class="headerlink" href="#ar-flow-diagram" title="Permanent link">&para;</a></h3>
+<p><img alt="System Flow" src="../images-srishti/image4.png" /></p>
 <hr />
 <h2 id="key-features">🧩 Key Features<a class="headerlink" href="#key-features" title="Permanent link">&para;</a></h2>
 <h3 id="arrow-based-navigation">➤ Arrow-Based Navigation<a class="headerlink" href="#arrow-based-navigation" title="Permanent link">&para;</a></h3>
@@ -1156,6 +1201,8 @@ No unnecessary questions.</p>
 <p>Each topping is interactive. Selecting it displays its name and description.</p>
 <h3 id="nutrition-toggle">➤ Nutrition Toggle<a class="headerlink" href="#nutrition-toggle" title="Permanent link">&para;</a></h3>
 <p>Users can view calorie details and basic health-related information.</p>
+<h3 id="feature-interaction-interface">🖼 Feature Interaction Interface<a class="headerlink" href="#feature-interaction-interface" title="Permanent link">&para;</a></h3>
+<p><img alt="UI Interaction" src="../images-srishti/image5.png" /></p>
 <hr />
 <h2 id="project-scope">📏 Project Scope<a class="headerlink" href="#project-scope" title="Permanent link">&para;</a></h2>
 <p>The system is intentionally limited to pizza only.</p>
