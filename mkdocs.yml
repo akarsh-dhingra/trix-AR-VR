@@ -27,6 +27,8 @@ nav:
       - By Author:
           - Akarsh: blog/akarsh.md
           - Suhani: blog/suhani.md
+            - Blogs by Suhani: blog/suhani.md
+            - From Idea to Structure: blog/2026-02-08-from-idea-to-structure.md
           - Srishti: blog/srishti.md
 
 markdown_extensions:
