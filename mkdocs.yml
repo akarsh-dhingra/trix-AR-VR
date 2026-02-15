@@ -1,0 +1,53 @@
+site_name: TRIX AR/VR Documentation
+site_url: https://yourusername.github.io/trix-AR-VR/
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - toc.integrate
+    - search.highlight
+    - search.share
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Project Documentation:
+      - Introduction: introduction.md
+      - Objectives (SMART): objectives.md
+      - Timeline: timeline.md
+      - Methodology: methodology.md
+      - Roles: roles.md
+      - Contributions: contributions.md
+      - Resources / Budget: resources.md
+  - Blog:
+      - Blog Home: blog/index.md
+      - By Author:
+          - Akarsh: blog/akarsh.md
+          - Suhani: blog/suhani.md
+          - Srishti: blog/srishti.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+  - blog
+theme:
+  name: material
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
