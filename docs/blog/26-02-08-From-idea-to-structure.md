@@ -1,0 +1,88 @@
+# From Idea to Structure: Understanding What We Actually Built
+
+**Author:** Suhani Garg  
+**Tags:** AR, VR  
+
+---
+
+## Background Context
+
+When we first proposed building an augmented reality–based menu system, the idea felt exciting and practical. The core concept was simple: scan a menu, display a 3D pizza in AR, and enhance the ordering experience. It seemed modern, interactive, and relevant to real-world use.
+
+<p align="center">
+  <img src="../images/AR-food-menu.jpg" width="500">
+</p>
+
+However, during our initial presentation, we realized that having a good idea is not the same as having a well-defined system. While the motivation behind the project was understood, several important structural questions were raised. These questions helped us recognize that we had explained *what* we wanted to build, but not clearly enough *how* it would function.
+
+---
+
+## Discussion and Key Questions Raised
+
+During the discussion, one of the main concerns was about marker usage.
+
+It was unclear whether:
+
+- A single marker would represent the entire menu  
+- Multiple markers would be used for different items  
+
+<p align="center">
+  <img src="../images/download.jpg" width="500">
+</p>
+
+This created ambiguity about how the system would scale and function in practice.
+
+Another important question was:
+
+> “After scanning the marker, what exactly opens?”
+
+We had not clearly defined:
+
+- Whether a new scene would load  
+- How navigation between items would work  
+- Whether rescanning would be required for each item  
+
+These questions revealed that our explanation lacked system-level clarity.
+
+---
+
+## Realizations from the Feedback
+
+The biggest realization from Day 1 was that a project must be explained as a **complete interaction flow**, not just a list of features.
+
+We understood that evaluators are assessing:
+
+- Clarity of system behavior  
+- Correct identification of AR type  
+- Logical scene structure  
+- Realistic scope and implementation  
+
+Without defining marker behavior and scene persistence, the project risked appearing like a basic “scan-and-show” AR demo, even if additional features were planned.
+
+---
+
+## Structural Decisions Taken
+
+Based on the feedback, we refined the structure of the project before moving forward.
+
+The following decisions were made:
+
+- The system will use **a single marker** (menu card or QR image).
+- Scanning the marker will open **one persistent AR scene**.
+- All interactions will occur within that same scene.
+- Navigation between pizzas will happen using left and right arrows.
+- Ingredient details and nutrition toggles will function inside the same AR environment.
+
+By defining this clearly, the project shifted from a conceptual AR idea to a structured interactive system.
+
+---
+
+## Key Learning from Day 1
+
+Day 1 taught us that clarity is more important than complexity. Even a technically simple AR system can be strong if the interaction flow is clearly defined and logically structured.
+
+The most important takeaway was:
+
+> Before building features, define the structure.
+
+This reflection helped us move from idea-stage thinking to system-level planning.
