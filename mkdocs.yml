@@ -23,12 +23,15 @@ nav:
       - Contributions: contributions.md
       - Resources / Budget: resources.md
   
-  - Blog:
-    - Blog Home: blog/index.md
+- Blog:
     - By Author:
         - Akarsh: blog/akarsh.md
-        - Suhani: blog/suhani.md
+        - Suhani:
+            - Overview: blog/suhani.md
+            - From Idea to Structure: blog/2026-02-08-from-idea-to-structure.md
+            - Platform Constraints: blog/2026-02-12-platform-constraints.md
         - Srishti: blog/srishti.md
+
 
 
 markdown_extensions:
