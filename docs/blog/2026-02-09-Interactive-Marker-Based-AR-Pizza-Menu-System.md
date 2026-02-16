@@ -1,7 +1,7 @@
 # 🍕 Interactive Marker-Based AR Pizza Menu System
 
 **Author:** Srishti Garg  
-**Date:** February 15, 2026  
+**Date:** February 9, 2026  
 
 ---
 
@@ -183,3 +183,7 @@ It enhances:
 - Informational transparency  
 
 Rather than being a novelty feature, the AR system functions as a meaningful interface that improves everyday experiences like restaurant ordering.
+
+🔄 Transition to Iteration Phase
+
+While this blog focused on explaining the concept and architecture of the AR Pizza Menu System, the next stage involves refining interaction flow, scene persistence, and implementation stability. The upcoming development blog will document how the system evolves from conceptual design into a structured, stable AR experience.
