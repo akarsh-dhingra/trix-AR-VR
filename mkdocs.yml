@@ -1,5 +1,5 @@
 site_name: TRIX AR/VR Documentation
-site_url: https://yourusername.github.io/trix-AR-VR/
+site_url: https://akarsh-dhingra.github.io/trix-AR-VR/
 
 theme:
   name: material
@@ -11,6 +11,15 @@ theme:
     - search.highlight
     - search.share
     - content.code.copy
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
 
 nav:
   - Home: index.md
@@ -22,17 +31,14 @@ nav:
       - Roles: roles.md
       - Contributions: contributions.md
       - Resources / Budget: resources.md
-  
-- Blog:
-    - By Author:
-        - Akarsh: blog/akarsh.md
-        - Suhani:
-            - Overview: blog/suhani.md
-            - From Idea to Structure: blog/2026-02-08-from-idea-to-structure.md
-            - Platform Constraints: blog/2026-02-12-platform-constraints.md
-        - Srishti: blog/srishti.md
-
-
+  - Blog:
+      - By Author:
+          - Akarsh: blog/akarsh.md
+          - Suhani:
+              - Overview: blog/suhani.md
+              - From Idea to Structure: blog/2026-02-08-from-idea-to-structure.md
+              - Platform Constraints: blog/2026-02-12-platform-constraints.md
+          - Srishti: blog/srishti.md
 
 markdown_extensions:
   - admonition
@@ -46,16 +52,3 @@ markdown_extensions:
 plugins:
   - search
   - blog
-theme:
-  name: material
-  palette:
-    - scheme: default
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
-    - scheme: slate
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
-      features:
-        - toc.integrate

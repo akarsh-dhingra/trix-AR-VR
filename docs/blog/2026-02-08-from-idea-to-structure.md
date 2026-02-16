@@ -10,7 +10,7 @@
 When we first proposed building an augmented reality–based menu system, the idea felt exciting and practical. The core concept was simple: scan a menu, display a 3D pizza in AR, and enhance the ordering experience. It seemed modern, interactive, and relevant to real-world use.
 
 <p align="center">
-  <img src="../images/AR-food-menu.jpg" width="500">
+  <img src="../../images/AR-food-menu.jpg" width="500">
 </p>
 
 However, during our initial presentation, we realized that having a good idea is not the same as having a well-defined system. While the motivation behind the project was understood, several important structural questions were raised. These questions helped us recognize that we had explained *what* we wanted to build, but not clearly enough *how* it would function.
@@ -27,7 +27,7 @@ It was unclear whether:
 - Multiple markers would be used for different items  
 
 <p align="center">
-  <img src="../images/download.jpg" width="500">
+  <img src="../../images/download.jpg" width="500">
 </p>
 
 This created ambiguity about how the system would scale and function in practice.

@@ -12,7 +12,7 @@ While planning the frontend development of our AR-based menu system, we encounte
 Although our system is designed using AR Foundation — which is inherently cross-platform — practical deployment is influenced by the development environment and hardware availability.
 
 <p align="center">
-  <img src="../images/arvrsetup.png" width="500">
+  <img src="../../images/arvrsetup.png" width="500">
 </p>
 
 ---
