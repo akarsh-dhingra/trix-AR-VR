@@ -38,6 +38,7 @@ nav:
               - Overview: blog/suhani.md
               - From Idea to Structure: blog/2026-02-08-from-idea-to-structure.md
               - Platform Constraints: blog/2026-02-12-platform-constraints.md
+              - Module Development – Input Layer: blog/2026-02-16-module-development-input-layer.md
           - Srishti: blog/srishti.md
 
 markdown_extensions:
