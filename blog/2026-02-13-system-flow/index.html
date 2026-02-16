@@ -21,7 +21,7 @@
     
     
       
-        <title>🍕 Hybrid Augmented Reality (AR) Pizza Visualization System - TRIX AR/VR Documentation</title>
+        <title>🍕 High Level Design of Pizza Visualization System - TRIX AR/VR Documentation</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#hybrid-augmented-reality-ar-pizza-visualization-system" class="md-skip">
+        <a href="#high-level-design-of-pizza-visualization-system" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              🍕 Hybrid Augmented Reality (AR) Pizza Visualization System
+              🍕 High Level Design of Pizza Visualization System
             
           </span>
         </div>
@@ -788,6 +788,373 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#system-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 System Capabilities
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Architecture Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Architecture Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔹 Hybrid Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#marker-detection-tracking-module-qr-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📷 Marker Detection &amp; Tracking Module (QR-Based)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📷 Marker Detection &amp; Tracking Module (QR-Based)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-camera-frame-acquisition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1️⃣ Camera Frame Acquisition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-feature-point-extraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2️⃣ Feature Point Extraction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2️⃣ Feature Point Extraction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algorithms-used-internally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithms Used Internally
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-feature-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3️⃣ Feature Matching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-pose-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4️⃣ Pose Estimation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#surface-detection-using-slam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Surface Detection Using SLAM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Surface Detection Using SLAM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-slam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is SLAM?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-environmental-feature-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Environmental Feature Tracking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-motion-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Motion Tracking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-point-cloud-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Point Cloud Creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-plane-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Plane Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-system-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 Complete System Flow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 Complete System Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-qr-scan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — QR Scan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-slam-activation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — SLAM Activation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-pizza-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Pizza Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hit-testing-object-placement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Hit Testing &amp; Object Placement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Hit Testing &amp; Object Placement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ray-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📐 Ray Equation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plane-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📐 Plane Equation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architectural-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗 Architectural Options
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗 Architectural Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-pure-marker-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option A — Pure Marker-Based
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-hybrid-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option B — Hybrid (Recommended)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Option B — Hybrid (Recommended)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advantages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineering-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ Engineering Note
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-components-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧩 Technical Components Used
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -805,34 +1172,35 @@
 
 
 
-<h1 id="hybrid-augmented-reality-ar-pizza-visualization-system">🍕 Hybrid Augmented Reality (AR) Pizza Visualization System<a class="headerlink" href="#hybrid-augmented-reality-ar-pizza-visualization-system" title="Permanent link">&para;</a></h1>
+<h1 id="high-level-design-of-pizza-visualization-system">🍕 High Level Design of Pizza Visualization System<a class="headerlink" href="#high-level-design-of-pizza-visualization-system" title="Permanent link">&para;</a></h1>
 <p><strong>Author:</strong> Akarsh<br />
 <strong>Date:</strong> February 13, 2026  </p>
+<hr />
 <h2 id="project-overview">📌 Project Overview<a class="headerlink" href="#project-overview" title="Permanent link">&para;</a></h2>
 <p>This project presents a <strong>Hybrid Augmented Reality (AR) system</strong> that combines:</p>
 <ul>
-<li><strong>QR Code-based Data Retrieval</strong></li>
-<li><strong>SLAM-based Surface Detection</strong></li>
-<li><strong>3D Object Placement on Real-world Tables</strong></li>
+<li>QR Code-based Data Retrieval</li>
+<li>SLAM-based Surface Detection</li>
+<li>3D Object Placement on Real-world Tables</li>
 </ul>
 <p>Unlike traditional marker-based AR systems, this architecture separates:</p>
 <ul>
-<li><strong>QR Code → Data Trigger</strong></li>
-<li><strong>SLAM → Real-world Surface Placement</strong></li>
+<li>QR Code → Data Trigger  </li>
+<li>SLAM → Real-world Surface Placement  </li>
 </ul>
 <p>This enables a more immersive and technically advanced AR experience.</p>
 <hr />
-<h1 id="system-capabilities">🎯 System Capabilities<a class="headerlink" href="#system-capabilities" title="Permanent link">&para;</a></h1>
+<h2 id="system-capabilities">🎯 System Capabilities<a class="headerlink" href="#system-capabilities" title="Permanent link">&para;</a></h2>
 <p>The system allows users to:</p>
 <ol>
-<li>Scan a QR code on a restaurant menu.</li>
-<li>Load the complete pizza menu dynamically.</li>
-<li>Select a specific pizza.</li>
-<li>View a 3D pizza model rendered on the real table in front of them.</li>
+<li>Scan a QR code on a restaurant menu  </li>
+<li>Load the complete pizza menu dynamically  </li>
+<li>Select a specific pizza  </li>
+<li>View a 3D pizza model rendered on the real table  </li>
 </ol>
 <hr />
-<h1 id="architecture-overview">🧠 Architecture Overview<a class="headerlink" href="#architecture-overview" title="Permanent link">&para;</a></h1>
-<h2 id="hybrid-model">🔹 Hybrid Model<a class="headerlink" href="#hybrid-model" title="Permanent link">&para;</a></h2>
+<h2 id="architecture-overview">🧠 Architecture Overview<a class="headerlink" href="#architecture-overview" title="Permanent link">&para;</a></h2>
+<h3 id="hybrid-model">🔹 Hybrid Model<a class="headerlink" href="#hybrid-model" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -860,37 +1228,29 @@
 The QR only triggers data loading.</p>
 </blockquote>
 <hr />
-<h1 id="marker-detection-tracking-module-qr-based">📷 Marker Detection &amp; Tracking Module (QR-Based)<a class="headerlink" href="#marker-detection-tracking-module-qr-based" title="Permanent link">&para;</a></h1>
-<h2 id="1-camera-frame-acquisition">1️⃣ Camera Frame Acquisition<a class="headerlink" href="#1-camera-frame-acquisition" title="Permanent link">&para;</a></h2>
+<h2 id="marker-detection-tracking-module-qr-based">📷 Marker Detection &amp; Tracking Module (QR-Based)<a class="headerlink" href="#marker-detection-tracking-module-qr-based" title="Permanent link">&para;</a></h2>
+<h3 id="1-camera-frame-acquisition">1️⃣ Camera Frame Acquisition<a class="headerlink" href="#1-camera-frame-acquisition" title="Permanent link">&para;</a></h3>
 <p>The mobile camera continuously captures frames (30–60 FPS).</p>
-<p>Each frame undergoes preprocessing:</p>
+<p>Preprocessing steps:</p>
 <ul>
 <li>Grayscale conversion  </li>
 <li>Edge detection  </li>
 <li>Corner detection  </li>
 </ul>
-<p>These steps prepare the frame for feature extraction.</p>
 <hr />
-<h2 id="2-feature-point-extraction">2️⃣ Feature Point Extraction<a class="headerlink" href="#2-feature-point-extraction" title="Permanent link">&para;</a></h2>
-<p>AR SDKs such as:</p>
+<h3 id="2-feature-point-extraction">2️⃣ Feature Point Extraction<a class="headerlink" href="#2-feature-point-extraction" title="Permanent link">&para;</a></h3>
+<p>AR SDKs used:</p>
 <ul>
 <li>ARCore  </li>
 <li>ARKit  </li>
 <li>Vuforia  </li>
 <li>AR Foundation  </li>
 </ul>
-<p>detect distinct visual features from the QR image.</p>
-<h3 id="algorithms-used-internally">Algorithms Used Internally<a class="headerlink" href="#algorithms-used-internally" title="Permanent link">&para;</a></h3>
+<h4 id="algorithms-used-internally">Algorithms Used Internally<a class="headerlink" href="#algorithms-used-internally" title="Permanent link">&para;</a></h4>
 <ul>
 <li>ORB (Oriented FAST and Rotated BRIEF)</li>
 <li>FAST Corner Detection</li>
-<li>SIFT / SURF (legacy methods)</li>
-</ul>
-<p>These algorithms:</p>
-<ul>
-<li>Detect corners  </li>
-<li>Identify edges  </li>
-<li>Extract unique pixel patterns  </li>
+<li>SIFT / SURF (legacy)</li>
 </ul>
 <p>QR codes are ideal due to:</p>
 <ul>
@@ -899,116 +1259,100 @@ The QR only triggers data loading.</p>
 </ul>
 <p>Each detected feature becomes a <strong>2D coordinate in image space</strong>.</p>
 <hr />
-<h2 id="3-feature-matching">3️⃣ Feature Matching<a class="headerlink" href="#3-feature-matching" title="Permanent link">&para;</a></h2>
-<p>The system stores a reference image of the QR marker.</p>
-<p>During runtime:</p>
+<h3 id="3-feature-matching">3️⃣ Feature Matching<a class="headerlink" href="#3-feature-matching" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Live camera features<br />
-  are matched with  </li>
+<li>Live camera features  </li>
 <li>Stored QR reference features  </li>
 </ul>
-<p>Using descriptor matching.</p>
+<p>Matched using descriptor comparison.</p>
 <p>If sufficient matches are found → <strong>Marker detected successfully.</strong></p>
 <hr />
-<h2 id="4-pose-estimation">4️⃣ Pose Estimation<a class="headerlink" href="#4-pose-estimation" title="Permanent link">&para;</a></h2>
-<p>Once detected, the system computes:</p>
+<h3 id="4-pose-estimation">4️⃣ Pose Estimation<a class="headerlink" href="#4-pose-estimation" title="Permanent link">&para;</a></h3>
+<p>The system computes:</p>
 <ul>
-<li><strong>Rotation (R)</strong></li>
-<li><strong>Translation (T)</strong></li>
+<li>Rotation (R)  </li>
+<li>Translation (T)  </li>
 </ul>
 <p>Using:</p>
 <ul>
 <li>Perspective-n-Point (PnP)</li>
 <li>Homography Matrix</li>
 </ul>
-<p>This determines:</p>
-<ul>
-<li>Position of QR in 3D space</li>
-<li>Orientation relative to camera</li>
-</ul>
-<p>A transformation matrix is generated, creating a virtual coordinate system.</p>
+<p>This determines QR position and orientation in 3D space.</p>
 <hr />
-<h1 id="surface-detection-using-slam">🧠 Surface Detection Using SLAM<a class="headerlink" href="#surface-detection-using-slam" title="Permanent link">&para;</a></h1>
-<h2 id="what-is-slam">What is SLAM?<a class="headerlink" href="#what-is-slam" title="Permanent link">&para;</a></h2>
+<h2 id="surface-detection-using-slam">🧠 Surface Detection Using SLAM<a class="headerlink" href="#surface-detection-using-slam" title="Permanent link">&para;</a></h2>
+<h3 id="what-is-slam">What is SLAM?<a class="headerlink" href="#what-is-slam" title="Permanent link">&para;</a></h3>
 <p><strong>SLAM = Simultaneous Localization and Mapping</strong></p>
-<p>It performs two tasks simultaneously:</p>
+<p>It performs:</p>
 <ol>
-<li>Maps the environment.</li>
-<li>Tracks device movement in 3D space.</li>
+<li>Environment mapping  </li>
+<li>Device movement tracking  </li>
 </ol>
 <hr />
-<h2 id="step-1-environmental-feature-tracking">Step 1️⃣ Environmental Feature Tracking<a class="headerlink" href="#step-1-environmental-feature-tracking" title="Permanent link">&para;</a></h2>
-<p>The camera detects natural feature points such as:</p>
+<h3 id="step-1-environmental-feature-tracking">Step 1 — Environmental Feature Tracking<a class="headerlink" href="#step-1-environmental-feature-tracking" title="Permanent link">&para;</a></h3>
+<p>Detected features:</p>
 <ul>
-<li>Table edges</li>
-<li>Wood patterns</li>
-<li>Corners</li>
-<li>Texture variations</li>
-</ul>
-<p>These are environmental features — different from QR features.</p>
-<hr />
-<h2 id="step-2-motion-tracking">Step 2️⃣ Motion Tracking<a class="headerlink" href="#step-2-motion-tracking" title="Permanent link">&para;</a></h2>
-<p>The system combines:</p>
-<ul>
-<li>Camera input</li>
-<li>Gyroscope</li>
-<li>Accelerometer</li>
-</ul>
-<p>To determine device movement in 3D space.</p>
-<hr />
-<h2 id="step-3-point-cloud-creation">Step 3️⃣ Point Cloud Creation<a class="headerlink" href="#step-3-point-cloud-creation" title="Permanent link">&para;</a></h2>
-<p>Tracked feature points are converted into a <strong>sparse 3D map</strong>.</p>
-<p>This forms a point cloud representation of the environment.</p>
-<hr />
-<h2 id="step-4-plane-detection">Step 4️⃣ Plane Detection<a class="headerlink" href="#step-4-plane-detection" title="Permanent link">&para;</a></h2>
-<p>Using algorithms like <strong>RANSAC</strong>:</p>
-<ul>
-<li>Coplanar points are clustered.</li>
-<li>A flat surface model is fitted.</li>
-</ul>
-<p>If sufficient horizontal points exist → A plane is detected.</p>
-<p>Examples:
-- Table surface
-- Floor</p>
-<hr />
-<h1 id="complete-system-flow">🔄 Complete System Flow<a class="headerlink" href="#complete-system-flow" title="Permanent link">&para;</a></h1>
-<h2 id="step-1-qr-scan">🔹 Step 1 — QR Scan<a class="headerlink" href="#step-1-qr-scan" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Camera detects QR code.</li>
-<li>QR is decoded.</li>
-<li>JSON menu data is retrieved.</li>
-<li>Pizza list loads in UI.</li>
-<li>No 3D object rendered yet.</li>
+<li>Table edges  </li>
+<li>Wood patterns  </li>
+<li>Corners  </li>
+<li>Texture variations  </li>
 </ul>
 <hr />
-<h2 id="step-2-slam-activation">🔹 Step 2 — SLAM Activation<a class="headerlink" href="#step-2-slam-activation" title="Permanent link">&para;</a></h2>
+<h3 id="step-2-motion-tracking">Step 2 — Motion Tracking<a class="headerlink" href="#step-2-motion-tracking" title="Permanent link">&para;</a></h3>
+<p>Combines:</p>
 <ul>
-<li>User moves phone.</li>
-<li>System detects table surface.</li>
-<li>Plane visualization appears.</li>
+<li>Camera input  </li>
+<li>Gyroscope  </li>
+<li>Accelerometer  </li>
 </ul>
 <hr />
-<h2 id="step-3-pizza-selection">🔹 Step 3 — Pizza Selection<a class="headerlink" href="#step-3-pizza-selection" title="Permanent link">&para;</a></h2>
-<p>When user selects a pizza:</p>
+<h3 id="step-3-point-cloud-creation">Step 3 — Point Cloud Creation<a class="headerlink" href="#step-3-point-cloud-creation" title="Permanent link">&para;</a></h3>
+<p>Tracked features form a <strong>sparse 3D point cloud</strong>.</p>
+<hr />
+<h3 id="step-4-plane-detection">Step 4 — Plane Detection<a class="headerlink" href="#step-4-plane-detection" title="Permanent link">&para;</a></h3>
+<p>Using <strong>RANSAC</strong>:</p>
 <ul>
-<li>Corresponding 3D prefab is instantiated.</li>
-<li>System performs a hit test.</li>
-<li>Object is anchored to detected plane.</li>
-<li>Pizza appears on the table.</li>
+<li>Coplanar points clustered  </li>
+<li>Surface model fitted  </li>
+</ul>
+<p>If enough horizontal points exist → Plane detected.</p>
+<hr />
+<h2 id="complete-system-flow">🔄 Complete System Flow<a class="headerlink" href="#complete-system-flow" title="Permanent link">&para;</a></h2>
+<h3 id="step-1-qr-scan">Step 1 — QR Scan<a class="headerlink" href="#step-1-qr-scan" title="Permanent link">&para;</a></h3>
+<ul>
+<li>QR detected  </li>
+<li>JSON menu loaded  </li>
+<li>UI updates  </li>
+<li>No 3D object rendered  </li>
 </ul>
 <hr />
-<h1 id="hit-testing-object-placement-mathematical-insight">🎯 Hit Testing &amp; Object Placement (Mathematical Insight)<a class="headerlink" href="#hit-testing-object-placement-mathematical-insight" title="Permanent link">&para;</a></h1>
-<p>When placing the pizza:</p>
+<h3 id="step-2-slam-activation">Step 2 — SLAM Activation<a class="headerlink" href="#step-2-slam-activation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>User moves phone  </li>
+<li>Table surface detected  </li>
+<li>Plane visualization appears  </li>
+</ul>
+<hr />
+<h3 id="step-3-pizza-selection">Step 3 — Pizza Selection<a class="headerlink" href="#step-3-pizza-selection" title="Permanent link">&para;</a></h3>
+<ul>
+<li>3D prefab instantiated  </li>
+<li>Hit test performed  </li>
+<li>Object anchored to plane  </li>
+<li>Pizza appears  </li>
+</ul>
+<hr />
+<h2 id="hit-testing-object-placement">🎯 Hit Testing &amp; Object Placement<a class="headerlink" href="#hit-testing-object-placement" title="Permanent link">&para;</a></h2>
+<p>When placing pizza:</p>
 <ol>
-<li>User taps screen at coordinates (x, y).</li>
-<li>System casts a ray from camera into 3D world.</li>
-<li>Ray intersects detected plane.</li>
-<li>Intersection point is returned.</li>
-<li>3D object placed at that coordinate.</li>
+<li>User taps screen (x, y)  </li>
+<li>Ray cast from camera  </li>
+<li>Ray intersects detected plane  </li>
+<li>Intersection coordinate returned  </li>
+<li>Object placed  </li>
 </ol>
 <hr />
-<h2 id="ray-equation">📐 Ray Equation<a class="headerlink" href="#ray-equation" title="Permanent link">&para;</a></h2>
-<p>P = O + tD</p>
+<h3 id="ray-equation">📐 Ray Equation<a class="headerlink" href="#ray-equation" title="Permanent link">&para;</a></h3>
+<p>P = O + tD  </p>
 <p>Where:</p>
 <ul>
 <li>O = Camera origin  </li>
@@ -1016,71 +1360,66 @@ The QR only triggers data loading.</p>
 <li>t = Scalar  </li>
 </ul>
 <hr />
-<h2 id="plane-equation">📐 Plane Equation<a class="headerlink" href="#plane-equation" title="Permanent link">&para;</a></h2>
-<p>Ax + By + Cz + D = 0</p>
-<p>Solving the ray-plane intersection provides the precise world coordinate.</p>
+<h3 id="plane-equation">📐 Plane Equation<a class="headerlink" href="#plane-equation" title="Permanent link">&para;</a></h3>
+<p>Ax + By + Cz + D = 0  </p>
+<p>Solving ray-plane intersection gives world coordinate.</p>
 <hr />
-<h1 id="architectural-options">🏗 Architectural Options<a class="headerlink" href="#architectural-options" title="Permanent link">&para;</a></h1>
-<h2 id="option-a-pure-marker-based">Option A — Pure Marker-Based<a class="headerlink" href="#option-a-pure-marker-based" title="Permanent link">&para;</a></h2>
+<h2 id="architectural-options">🏗 Architectural Options<a class="headerlink" href="#architectural-options" title="Permanent link">&para;</a></h2>
+<h3 id="option-a-pure-marker-based">Option A — Pure Marker-Based<a class="headerlink" href="#option-a-pure-marker-based" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Pizza appears directly on QR.</li>
-<li>Simpler implementation.</li>
-<li>Lower computational load.</li>
-</ul>
-<hr />
-<h2 id="option-b-hybrid-recommended">Option B — Hybrid (Recommended)<a class="headerlink" href="#option-b-hybrid-recommended" title="Permanent link">&para;</a></h2>
-<ul>
-<li>QR = Data trigger only.</li>
-<li>SLAM = Real-world placement.</li>
-<li>Pizza appears on table.</li>
-</ul>
-<h3 id="advantages">Advantages<a class="headerlink" href="#advantages" title="Permanent link">&para;</a></h3>
-<ul>
-<li>More immersive</li>
-<li>Technically advanced</li>
-<li>Stronger academic value</li>
-<li>Better user experience</li>
+<li>Pizza appears directly on QR  </li>
+<li>Simpler implementation  </li>
+<li>Lower computational load  </li>
 </ul>
 <hr />
-<h1 id="important-engineering-note">⚠️ Important Engineering Note<a class="headerlink" href="#important-engineering-note" title="Permanent link">&para;</a></h1>
-<p>If the pizza is placed relative to the table:</p>
+<h3 id="option-b-hybrid-recommended">Option B — Hybrid (Recommended)<a class="headerlink" href="#option-b-hybrid-recommended" title="Permanent link">&para;</a></h3>
 <ul>
-<li>The QR marker does NOT control object position.</li>
-<li>It only:</li>
-<li>Triggers data loading</li>
-<li>Starts AR session</li>
+<li>QR = Data trigger only  </li>
+<li>SLAM = Real-world placement  </li>
 </ul>
-<p>Object placement depends entirely on:</p>
+<h4 id="advantages">Advantages<a class="headerlink" href="#advantages" title="Permanent link">&para;</a></h4>
 <ul>
-<li>SLAM</li>
-<li>Plane detection</li>
-<li>Hit testing</li>
+<li>More immersive  </li>
+<li>Strong academic value  </li>
+<li>Better UX  </li>
 </ul>
 <hr />
-<h1 id="technical-components-used">🧩 Technical Components Used<a class="headerlink" href="#technical-components-used" title="Permanent link">&para;</a></h1>
+<h2 id="engineering-note">⚠️ Engineering Note<a class="headerlink" href="#engineering-note" title="Permanent link">&para;</a></h2>
+<p>If pizza is placed relative to table:</p>
 <ul>
-<li>Computer Vision</li>
-<li>Feature Detection Algorithms</li>
-<li>Pose Estimation</li>
-<li>SLAM</li>
-<li>Plane Detection</li>
-<li>Ray Casting</li>
-<li>3D Rendering Engine</li>
+<li>QR does NOT control object position  </li>
+<li>It only triggers data loading  </li>
+</ul>
+<p>Placement depends on:</p>
+<ul>
+<li>SLAM  </li>
+<li>Plane detection  </li>
+<li>Hit testing  </li>
 </ul>
 <hr />
-<h1 id="conclusion">🚀 Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h1>
+<h2 id="technical-components-used">🧩 Technical Components Used<a class="headerlink" href="#technical-components-used" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Computer Vision  </li>
+<li>Feature Detection  </li>
+<li>Pose Estimation  </li>
+<li>SLAM  </li>
+<li>Plane Detection  </li>
+<li>Ray Casting  </li>
+<li>3D Rendering  </li>
+</ul>
+<hr />
+<h2 id="conclusion">🚀 Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
 <p>This Hybrid AR architecture separates:</p>
 <p><strong>Data Retrieval (QR)</strong><br />
 from<br />
 <strong>Spatial Placement (SLAM)</strong>  </p>
-<p>This creates a scalable, immersive, and academically robust AR system suitable for:</p>
+<p>Creating a scalable and immersive AR system suitable for:</p>
 <ul>
-<li>Restaurant visualization systems</li>
-<li>Interactive AR commerce</li>
-<li>Educational AR applications</li>
-<li>Advanced HCI research projects</li>
+<li>Restaurant visualization  </li>
+<li>AR commerce  </li>
+<li>Educational AR  </li>
+<li>Advanced HCI research  </li>
 </ul>
-<hr />
 
 
 

@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://yourusername.github.io/trix-AR-VR/blog/2026-02-14-hybrid-ar/">
+        <link rel="canonical" href="https://yourusername.github.io/trix-AR-VR/blog/2026-02-08-systemd/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>🍕 Hybrid Ar system for Pizza Visualization - TRIX AR/VR Documentation</title>
+        <title>2026 02 08 systemd - TRIX AR/VR Documentation</title>
       
     
     
@@ -71,11 +71,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#hybrid-ar-system-for-pizza-visualization" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -108,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              🍕 Hybrid Ar system for Pizza Visualization
+              2026 02 08 systemd
             
           </span>
         </div>
@@ -768,132 +763,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#project-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Project Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#system-motivation-and-design-philosophy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        System Motivation and Design Philosophy
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="System Motivation and Design Philosophy">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-scene-persistence" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1️⃣ Scene Persistence
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-minimal-physical-effort" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2️⃣ Minimal Physical Effort
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-meaningful-interaction" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3️⃣ Meaningful Interaction
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#marker-based-architecture-and-scene-initialization" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Marker-Based Architecture and Scene Initialization
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#persistent-scene-navigation-and-model-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Persistent Scene Navigation and Model Management
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ingredient-level-interaction-and-information-discovery" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ingredient-Level Interaction and Information Discovery
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nutritional-information-and-ui-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Nutritional Information and UI Integration
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-outcome-and-technical-significance" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Project Outcome and Technical Significance
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -910,119 +779,9 @@
 
 
 
-<h1 id="hybrid-ar-system-for-pizza-visualization">🍕 Hybrid Ar system for Pizza Visualization<a class="headerlink" href="#hybrid-ar-system-for-pizza-visualization" title="Permanent link">&para;</a></h1>
-<p><strong>Author:</strong> Akarsh<br />
-<strong>Date:</strong> February 13, 2026  </p>
-<h2 id="project-overview">Project Overview<a class="headerlink" href="#project-overview" title="Permanent link">&para;</a></h2>
-<p>The <strong>AR/VR Interactive Marker-Based AR Menu Browsing System</strong> is an augmented reality application designed to explore how physical restaurant menus can be enhanced through immersive, interactive digital content.  </p>
-<p>The project investigates the use of <strong>marker-based AR</strong> as a practical, accessible, and low-cost approach for visualizing food items in three dimensions while maintaining a clear link between the physical and digital environments.</p>
-<p>The primary objective of the system is to move beyond static images traditionally used in menus and instead offer users an interactive, spatially anchored browsing experience.</p>
-<p>By scanning a physical marker — such as a printed menu card or QR-style image — users gain access to a virtual menu where food items can be explored visually, contextually, and interactively.</p>
-<p>The project emphasizes:</p>
-<ul>
-<li>Usability  </li>
-<li>System stability  </li>
-<li>Meaningful interaction  </li>
-</ul>
-<p>This makes it suitable for real-world deployment as well as academic demonstration.</p>
-<hr />
-<h2 id="system-motivation-and-design-philosophy">System Motivation and Design Philosophy<a class="headerlink" href="#system-motivation-and-design-philosophy" title="Permanent link">&para;</a></h2>
-<p>Early iterations of the project revealed a common limitation in basic AR applications:</p>
-<ul>
-<li>Frequent re-scanning  </li>
-<li>Fragmented scenes  </li>
-<li>Interactions focused more on novelty than usability  </li>
-</ul>
-<p>Based on evaluative feedback, the system was refined to adopt a more structured and intentional interaction model.</p>
-<p>The revised design prioritizes three core principles:</p>
-<h3 id="1-scene-persistence">1️⃣ Scene Persistence<a class="headerlink" href="#1-scene-persistence" title="Permanent link">&para;</a></h3>
-<p>Once activated, the AR environment should remain stable and continuous.</p>
-<h3 id="2-minimal-physical-effort">2️⃣ Minimal Physical Effort<a class="headerlink" href="#2-minimal-physical-effort" title="Permanent link">&para;</a></h3>
-<p>Users should not be required to repeatedly scan markers.</p>
-<h3 id="3-meaningful-interaction">3️⃣ Meaningful Interaction<a class="headerlink" href="#3-meaningful-interaction" title="Permanent link">&para;</a></h3>
-<p>Every interaction should serve a functional or informational purpose.</p>
-<p>These principles directly informed the architectural decisions made in the refined system.</p>
-<hr />
-<h2 id="marker-based-architecture-and-scene-initialization">Marker-Based Architecture and Scene Initialization<a class="headerlink" href="#marker-based-architecture-and-scene-initialization" title="Permanent link">&para;</a></h2>
-<p>At the foundation of the system lies a <strong>single-marker architecture</strong>.</p>
-<p>Instead of assigning individual markers to each menu item, the application intentionally uses <strong>one physical marker</strong> to represent the entire menu.  </p>
-<p>This marker acts as a stable spatial anchor, defining the coordinate system in which all virtual content is rendered.</p>
-<p>When the marker is detected by the device camera:</p>
-<ul>
-<li>The application initializes a single AR scene  </li>
-<li>The scene loads once  </li>
-<li>The interaction session continues without reinitialization  </li>
-</ul>
-<p>This design:</p>
-<ul>
-<li>Minimizes tracking loss  </li>
-<li>Reduces user friction  </li>
-<li>Preserves immersion  </li>
-</ul>
-<p>Upon successful detection, a default <strong>3D pizza model</strong> is rendered and anchored directly to the marker, establishing a clear connection between the physical menu and its digital counterpart.</p>
-<hr />
-<h2 id="persistent-scene-navigation-and-model-management">Persistent Scene Navigation and Model Management<a class="headerlink" href="#persistent-scene-navigation-and-model-management" title="Permanent link">&para;</a></h2>
-<p>A defining feature of the refined system is its <strong>persistent AR scene</strong>.</p>
-<p>After the initial scan:</p>
-<ul>
-<li>The user does not need to interact with the marker again  </li>
-<li>Navigation is handled entirely through on-screen UI controls  </li>
-</ul>
-<p>Pizza variations are explored using <strong>left and right arrow buttons</strong>.</p>
-<p>Each button press dynamically replaces the currently displayed pizza model with another variant.</p>
-<p>Importantly:</p>
-<ul>
-<li>Position remains constant  </li>
-<li>Orientation remains constant  </li>
-<li>Scale remains constant  </li>
-</ul>
-<p>Only the model changes.</p>
-<p>This ensures:</p>
-<ul>
-<li>Spatial consistency  </li>
-<li>No disorientation  </li>
-<li>Effective runtime asset swapping  </li>
-<li>Proper AR state management  </li>
-</ul>
-<p>This demonstrates how interactive AR systems can dynamically update content without resetting spatial anchors.</p>
-<hr />
-<h2 id="ingredient-level-interaction-and-information-discovery">Ingredient-Level Interaction and Information Discovery<a class="headerlink" href="#ingredient-level-interaction-and-information-discovery" title="Permanent link">&para;</a></h2>
-<p>To extend the experience beyond simple visualization, the system incorporates <strong>ingredient-level interaction</strong>.</p>
-<p>Individual toppings on the pizza model are clickable interactive elements.</p>
-<p>When selected:</p>
-<ul>
-<li>The topping name appears  </li>
-<li>A brief descriptive overlay is displayed  </li>
-</ul>
-<p>This transforms the AR menu into an exploratory interface and demonstrates object-level interaction within a marker-based AR scene.</p>
-<hr />
-<h2 id="nutritional-information-and-ui-integration">Nutritional Information and UI Integration<a class="headerlink" href="#nutritional-information-and-ui-integration" title="Permanent link">&para;</a></h2>
-<p>The system also includes a <strong>nutrition toggle feature</strong>.</p>
-<p>Users can display or hide:</p>
-<ul>
-<li>Calorie values  </li>
-<li>Dietary classification (e.g., vegetarian / non-vegetarian)  </li>
-</ul>
-<p>This information is accessed through a dedicated UI button.</p>
-<p>The toggle-based design ensures:</p>
-<ul>
-<li>The AR scene remains visually clean  </li>
-<li>Information is available on demand  </li>
-<li>Users control their level of detail  </li>
-</ul>
-<p>This reflects strong UI design principles within immersive environments.</p>
-<hr />
-<h2 id="project-outcome-and-technical-significance">Project Outcome and Technical Significance<a class="headerlink" href="#project-outcome-and-technical-significance" title="Permanent link">&para;</a></h2>
-<p>Through its refinements, the project evolves from a basic AR visualization into a structured interactive system.</p>
-<p>The final implementation demonstrates:</p>
-<ul>
-<li>A strong understanding of marker-based AR principles  </li>
-<li>Effective UI and AR scene integration  </li>
-<li>Practical state and content management  </li>
-<li>A user-centered immersive interaction model  </li>
-</ul>
-<p>The <strong>Interactive Marker-Based AR Menu Browsing System</strong> showcases how augmented reality can be applied in a practical, intuitive, and technically sound manner.</p>
-<p>Rather than functioning as a visual gimmick, the system presents AR as a meaningful interface capable of enhancing everyday experiences such as menu browsing through thoughtful interaction design.</p>
+  <h1>2026 02 08 systemd</h1>
+
+
 
 
 
