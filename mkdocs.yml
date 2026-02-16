@@ -22,18 +22,21 @@ nav:
       - Roles: roles.md
       - Contributions: contributions.md
       - Resources / Budget: resources.md
+  
   - Blog:
-      - Blog Home: blog/index.md
-      - By Author:
-          - Akarsh: blog/akarsh.md
-          - Suhani: blog/suhani.md
-          - Srishti: blog/srishti.md
+    - Blog Home: blog/index.md
+    - By Author:
+        - Akarsh: blog/akarsh.md
+        - Suhani: blog/suhani.md
+        - Srishti: blog/srishti.md
+
 
 markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.highlight
+  - attr_list
   - toc:
       permalink: true
 
