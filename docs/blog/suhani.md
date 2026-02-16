@@ -8,7 +8,7 @@ Welcome to my individual blog contributions for the AR/VR Interactive Menu Proje
 
 This blog explains how the project evolved from a basic AR concept into a structured interactive system with defined scene flow and navigation logic.
 
-[Read Full Blog →](../blog/2026-02-08-from-idea-to-structure/)
+[Read Full Blog →](/blog/2026-02-08-from-idea-to-structure/)
 
 ---
 
@@ -16,4 +16,5 @@ This blog explains how the project evolved from a basic AR concept into a struct
 
 This blog discusses the technical decision to deploy using ARCore on Android due to development environment constraints, while maintaining cross-platform architecture.
 
-[Read Full Blog →](../blog/2026-02-12-platform-constraints/)
+[Read Full Blog →](/blog/2026-02-12-platform-constraints/)
+
