@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://akarsh-dhingra.github.io/trix-AR-VR/blog/2026-02-15-Iteration-2%E2%80%94Structuring-the-AR-Pizza-Experience/">
+        <link rel="canonical" href="https://akarsh-dhingra.github.io/trix-AR-VR/blog/2026-03-29-iteration-3-ui-refinement/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>🍕 Iteration 2 — Structuring the AR Pizza Experience - TRIX AR/VR Documentation</title>
+        <title>🍕 Blog 3 — Building the Web AR Menu (Foundation Phase) - TRIX AR/VR Documentation</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#iteration-2-structuring-the-ar-pizza-experience" class="md-skip">
+        <a href="#blog-3-building-the-web-ar-menu-foundation-phase" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              🍕 Iteration 2 — Structuring the AR Pizza Experience
+              🍕 Blog 3 — Building the Web AR Menu (Foundation Phase)
             
           </span>
         </div>
@@ -962,113 +962,135 @@
 
 
 
-<h1 id="iteration-2-structuring-the-ar-pizza-experience">🍕 Iteration 2 — Structuring the AR Pizza Experience<a class="headerlink" href="#iteration-2-structuring-the-ar-pizza-experience" title="Permanent link">&para;</a></h1>
+<h1 id="blog-3-building-the-web-ar-menu-foundation-phase">🍕 Blog 3 — Building the Web AR Menu (Foundation Phase)<a class="headerlink" href="#blog-3-building-the-web-ar-menu-foundation-phase" title="Permanent link">&para;</a></h1>
 <p><strong>Author:</strong> Srishti Garg<br />
-<strong>Date:</strong> February 15, 2026  </p>
+<strong>Date:</strong> March 29, 2026  </p>
 <hr />
-<h2 id="continuing-from-the-previous-blog">📌 Continuing From the Previous Blog<a class="headerlink" href="#continuing-from-the-previous-blog" title="Permanent link">&para;</a></h2>
-<p>In my last blog, I explained the overall concept of the Interactive Marker-Based AR Pizza Menu System — how scanning a printed menu displays a 3D pizza in augmented reality, allowing users to explore ingredients, nutrition, and portion sizes.</p>
-<p>At that stage, the idea was clear.</p>
-<p>But while working on the implementation, I realized something important:</p>
-<p>Designing an AR experience is not just about rendering a 3D model.<br />
-It’s about defining interaction flow, stability, and structure.</p>
-<p>This blog documents what I am refining while actively building the system.</p>
+<h2 id="introduction">📌 Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>In the previous stages, the base structure of the AR Menu was already developed, including UI elements like dish navigation, ingredient panels, and layout.</p>
+<p>However, the system was incomplete because it lacked:</p>
+<ul>
+<li>3D visualization  </li>
+<li>AR interaction  </li>
+<li>QR-based access  </li>
+</ul>
+<p>This phase focuses on converting the static menu into a functional web-based system.</p>
 <hr />
-<h2 id="rethinking-the-user-flow">🧠 Rethinking the User Flow<a class="headerlink" href="#rethinking-the-user-flow" title="Permanent link">&para;</a></h2>
-<p>While developing the Unity scene, I asked myself:</p>
+<h2 id="understanding-the-system-very-important">🧠 Understanding the System (Very Important)<a class="headerlink" href="#understanding-the-system-very-important" title="Permanent link">&para;</a></h2>
+<p>Before coding, it is important to understand where everything happens:</p>
+<h3 id="1-github-code-storage">1. GitHub (Code Storage)<a class="headerlink" href="#1-github-code-storage" title="Permanent link">&para;</a></h3>
+<p>All project files (HTML, JavaScript, and models) are stored here.</p>
+<h3 id="2-github-pages-website-hosting">2. GitHub Pages (Website Hosting)<a class="headerlink" href="#2-github-pages-website-hosting" title="Permanent link">&para;</a></h3>
+<p>GitHub automatically converts your code into a live website.</p>
+<p>👉 Example:<br />
+https://gargsrishti.github.io/ar-menu/</p>
+<h3 id="3-user-flow">3. User Flow<a class="headerlink" href="#3-user-flow" title="Permanent link">&para;</a></h3>
 <ul>
-<li>What exactly happens after scanning?</li>
-<li>Does the scene reload every time?</li>
-<li>Should users rescan to switch pizzas?</li>
-<li>How do I prevent tracking loss?</li>
+<li>Website opens  </li>
+<li>Menu appears  </li>
+<li>User clicks item  </li>
+<li>3D model loads  </li>
 </ul>
-<p>These questions forced me to move from “feature thinking” to “system thinking.”</p>
-<p><img alt="Development in Unity" src="../images-srishti/2image1.png" width="425px" /></p>
 <hr />
-<h2 id="defining-scene-persistence">🔄 Defining Scene Persistence<a class="headerlink" href="#defining-scene-persistence" title="Permanent link">&para;</a></h2>
-<p>One major refinement I am currently implementing is persistent scene behavior.</p>
-<p>Earlier, I only focused on:</p>
-<ul>
-<li>Detect marker  </li>
-<li>Show pizza  </li>
-</ul>
-<p>Now, I am structuring it as:</p>
-<ul>
-<li>Detect marker  </li>
-<li>Initialize AR scene once  </li>
-<li>Keep scene active  </li>
-<li>Swap pizza models dynamically  </li>
-<li>Maintain same anchor position  </li>
-</ul>
-<p>This ensures:</p>
-<ul>
-<li>No repeated scanning  </li>
-<li>No scene reload  </li>
-<li>Stable user experience  </li>
-</ul>
-<p><img alt="Persistent AR Scene" src="../images-srishti/2image2.png" width="325px" /></p>
+<h2 id="step-1-adding-ar-support-using-model-viewer">⚙️ Step 1 — Adding AR Support using model-viewer<a class="headerlink" href="#step-1-adding-ar-support-using-model-viewer" title="Permanent link">&para;</a></h2>
+<p>To enable AR in the browser, we use <code>&lt;model-viewer&gt;</code>.</p>
+<h3 id="add-this-in-head">Add this in <code>&lt;head&gt;</code>:<a class="headerlink" href="#add-this-in-head" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="add-this-inside-body">Add this inside <code>&lt;body&gt;</code>:<a class="headerlink" href="#add-this-inside-body" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">model-viewer</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;models/pizza.glb&quot;</span>
+  <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Pizza&quot;</span>
+  <span class="na">ar</span>
+  <span class="na">ar-modes</span><span class="o">=</span><span class="s">&quot;webxr scene-viewer quick-look&quot;</span>
+  <span class="na">camera-controls</span>
+  <span class="na">auto-rotate</span>
+  <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 100%; height: 300px;&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">model-viewer</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>👉 This automatically adds the <strong>“View in your space” AR button</strong></p>
 <hr />
-<h2 id="refining-the-interaction-model">🏗 Refining the Interaction Model<a class="headerlink" href="#refining-the-interaction-model" title="Permanent link">&para;</a></h2>
-<p>Instead of loading separate scenes for each pizza, I am now using:</p>
-<ul>
-<li>Runtime prefab swapping  </li>
-<li>Fixed anchor position  </li>
-<li>Constant scale reference  </li>
-<li>UI-driven interaction  </li>
-</ul>
-<p>This keeps:</p>
-<ul>
-<li>Spatial consistency  </li>
-<li>Orientation stable  </li>
-<li>User experience smooth  </li>
-</ul>
-<p>It also makes the system technically cleaner.</p>
+<h2 id="step-2-adding-3d-models">🍕 Step 2 — Adding 3D Models<a class="headerlink" href="#step-2-adding-3d-models" title="Permanent link">&para;</a></h2>
+<p>Download models from:<br />
+👉 https://poly.pizza</p>
+<h3 id="folder-structure">Folder Structure:<a class="headerlink" href="#folder-structure" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>ar-menu/
+│── index.html
+│── models/
+│   ├── pizza.glb
+│   ├── burger.glb
+│   └── pasta.glb
+</code></pre></div>
+<p>Upload these files to GitHub.</p>
 <hr />
-<h2 id="improving-ingredient-interaction">🧩 Improving Ingredient Interaction<a class="headerlink" href="#improving-ingredient-interaction" title="Permanent link">&para;</a></h2>
-<p>While testing the topping selection feature, I realized that simply displaying text was not enough.</p>
-<p>Now I am refining:</p>
-<ul>
-<li>Highlight shader effect on selected topping  </li>
-<li>Floating info panel near pizza  </li>
-<li>Clear UI hierarchy to avoid clutter  </li>
-</ul>
-<p>This transforms the system from “visual demo” into an interactive exploration tool.</p>
-<p><img alt="Ingredient Highlight" src="../images-srishti/2image3.png" width="325px" /></p>
+<h2 id="step-3-switching-dishes-javascript">🔄 Step 3 — Switching Dishes (JavaScript)<a class="headerlink" href="#step-3-switching-dishes-javascript" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">dishes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Pizza&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;₹299&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">model</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;models/pizza.glb&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Burger&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;₹199&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">model</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;models/burger.glb&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">];</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">loadDish</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;model-viewer&#39;</span><span class="p">).</span><span class="nx">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dishes</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">model</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">nextDish</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">current</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="nx">dishes</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">loadDish</span><span class="p">(</span><span class="nx">current</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>👉 This enables arrow-based navigation between dishes.</p>
 <hr />
-<h2 id="nutrition-toggle-optimization">📊 Nutrition Toggle Optimization<a class="headerlink" href="#nutrition-toggle-optimization" title="Permanent link">&para;</a></h2>
-<p>The nutrition panel previously appeared abruptly.</p>
-<p>Now I am adjusting:</p>
-<ul>
-<li>Smooth fade animation  </li>
-<li>Toggle state memory  </li>
-<li>Positioning logic to avoid overlapping with model  </li>
-</ul>
-<p>This improves usability and reduces visual overload.</p>
-<p><img alt="Nutrition Panel" src="../images-srishti/2image4.png" width="325px" /></p>
+<h2 id="step-4-ingredients-nutrition">🥗 Step 4 — Ingredients &amp; Nutrition<a class="headerlink" href="#step-4-ingredients-nutrition" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;info&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Ingredients: Tomato, Cheese<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Calories: 250 kcal<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>👉 Keep it simple (basic nutrition information is sufficient).</p>
 <hr />
-<h2 id="technical-refinement-in-progress">🎯 Technical Refinement in Progress<a class="headerlink" href="#technical-refinement-in-progress" title="Permanent link">&para;</a></h2>
-<p>Currently working on:</p>
+<h2 id="step-5-qr-code-integration">📱 Step 5 — QR Code Integration<a class="headerlink" href="#step-5-qr-code-integration" title="Permanent link">&para;</a></h2>
+<p>This is the final and most important step.</p>
+<h3 id="steps">Steps:<a class="headerlink" href="#steps" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Improving marker detection stability in Vuforia  </li>
-<li>Testing lighting variation performance  </li>
-<li>Adjusting 3D model optimization  </li>
-<li>Reducing unnecessary object instantiation  </li>
-<li>Ensuring frame rate stability  </li>
+<li>
+<p>Open: https://qrcode-monkey.com<br />
+  OR https://qr.io  </p>
+</li>
+<li>
+<p>Paste your website URL:</p>
+</li>
 </ul>
-<p>This phase is less visible to users but critical for system robustness.</p>
+<div class="highlight"><pre><span></span><code>https://gargsuhani.github.io/ar-menu/
+</code></pre></div>
+<ul>
+<li>Generate QR code  </li>
+<li>Download PNG  </li>
+<li>Print and place it on the table  </li>
+</ul>
 <hr />
-<h2 id="key-realization-during-development">💡 Key Realization During Development<a class="headerlink" href="#key-realization-during-development" title="Permanent link">&para;</a></h2>
-<p>While building this second phase, I’ve realized:</p>
-<p>AR projects fail not because of missing features —<br />
-but because of unstable structure.</p>
-<p>Even a simple marker-based system becomes strong when:</p>
+<h2 id="final-working-flow">🔄 Final Working Flow<a class="headerlink" href="#final-working-flow" title="Permanent link">&para;</a></h2>
+<p>Scan QR → Website opens → Menu visible → Click item →<br />
+3D model loads → Click AR → View on table  </p>
+<hr />
+<h2 id="conclusion">🚀 Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>This project demonstrates how web-based AR can be integrated into real-world applications like restaurant menus.</p>
+<p>By combining:</p>
 <ul>
-<li>Scene logic is clear  </li>
-<li>Interaction flow is intentional  </li>
-<li>State management is controlled  </li>
-<li>UI supports immersion  </li>
+<li>GitHub hosting  </li>
+<li>model-viewer  </li>
+<li>QR technology  </li>
 </ul>
-<p>This blog marks the transition from idea to engineering refinement.</p>
+<p>we created a simple yet powerful AR experience without requiring a mobile application.</p>
 
 
 
